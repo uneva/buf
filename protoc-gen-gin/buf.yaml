@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/vueva/protoc-gen-gin
+name: buf.build/uneva/protoc-gen-gin
 breaking:
   use:
     - FILE

@@ -1,4 +1,4 @@
-# docker build --platform linux/amd64 -t buf.build/vueva/protoc-gen-gin:v1.0.0 .
+# docker build --platform linux/amd64 -t buf.build/uneva/protoc-gen-gin:v1.0.0 .
 
 # Use the official Golang image
 FROM golang:1.21-bullseye AS builder

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package api.greeter.v1;
+
+import "google/api/annotations.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/uneva/buf/playground/api/greeter/v1;v1";
+
+service GreeterService {
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse) {
+    option (google.api.http) = {get: "/v1/hello/{name}"};
+  }
+}
+
+message SayHelloRequest {
+  string name = 1 [(validate.rules).string = {
+    min_len: 6,
+    max_len: 24
+  }];
+}
+
+message SayHelloResponse {
+  string text = 1;
+}

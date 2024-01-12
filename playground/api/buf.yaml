@@ -1,0 +1,14 @@
+version: v1
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/envoyproxy/protoc-gen-validate
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+  except:
+    - PACKAGE_VERSION_SUFFIX
+    - PACKAGE_DIRECTORY_MATCH
+    - RPC_REQUEST_STANDARD_NAME

@@ -32,4 +32,4 @@ COPY --from=builder /protoc-gen-go-http /protoc-gen-go-http
 ENTRYPOINT ["/protoc-gen-go-http"]
 
 # Set the user to nobody for better security
-USER nobody
+# USER nobody

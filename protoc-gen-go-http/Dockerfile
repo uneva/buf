@@ -1,4 +1,5 @@
-# docker build --platform linux/amd64 -t buf.build/uneva/protoc-gen-go-http:v1.0.1 .
+# docker build --platform linux/amd64 -t buf.build/uneva/protoc-gen-go-http:v1.0.0 .
+# docker build --platform linux/arm64/v8 -t buf.build/uneva/protoc-gen-go-http:v1.0.1 .
 
 # Use the official Golang image
 FROM golang:1.21-bullseye AS builder
@@ -32,4 +33,4 @@ COPY --from=builder /protoc-gen-go-http /protoc-gen-go-http
 ENTRYPOINT ["/protoc-gen-go-http"]
 
 # Set the user to nobody for better security
-# USER nobody
+USER nobody

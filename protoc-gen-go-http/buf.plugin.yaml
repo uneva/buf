@@ -1,0 +1,3 @@
+version: v1
+name: buf.build/uneva/protoc-gen-gin
+plugin_version: v1.0.0

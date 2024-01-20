@@ -18,6 +18,9 @@ func (s *service) SayHello(ctx context.Context, req *v1.SayHelloRequest) (*v1.Sa
 
 func main() {
 	e := gin.Default()
+	e.GET("/openapi", func(ctx *gin.Context) {
+		ctx.File("./api/openapi.yaml")
+	})
 	// srv := transport.NewServer(transport.Engine(e))
 
 	// srv.Router().GET("/openapi", func(ctx transport.Context) error {
@@ -26,10 +29,6 @@ func main() {
 	// })
 
 	// v1.RegisterGreeterServiceServer(srv, &service{})
-
-	e.GET("/q", func(ctx *gin.Context) {
-		ctx.File("./api/swagger.json")
-	})
 
 	e.Run()
 }

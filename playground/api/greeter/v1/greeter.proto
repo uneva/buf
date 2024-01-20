@@ -8,6 +8,7 @@ import "validate/validate.proto";
 option go_package = "github.com/uneva/buf/playground/api/greeter/v1;v1";
 
 service GreeterService {
+  // SayHello greets the user
   rpc SayHello(SayHelloRequest) returns (SayHelloResponse) {
     option (google.api.http) = {get: "/v1/hello/{name}"};
   }

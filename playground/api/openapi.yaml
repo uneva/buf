@@ -11,7 +11,8 @@ paths:
         get:
             tags:
                 - GreeterService
-            description: SayHello greets the user
+            summary: SayHello
+            description: SayHello says hello to the user.
             operationId: GreeterService_SayHello
             parameters:
                 - name: name

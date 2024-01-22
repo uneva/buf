@@ -28,7 +28,7 @@ func main() {
 	// 	return nil
 	// })
 
-	// v1.RegisterGreeterServiceServer(srv, &service{})
+	// v1.RegisterGreeterServiceGinServer(srv, &service{})
 
 	e.Run()
 }

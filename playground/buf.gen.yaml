@@ -17,3 +17,12 @@ plugins:
     out: api
     opt:
       - paths=source_relative
+  - plugin: buf.build/grpc/go
+    out: api
+    opt:
+      - paths=source_relative
+  - plugin: go-http:v1.0.0
+    path: ["docker","run","buf.build/uneva/protoc-gen-go-http:v1.0.0"]
+    out: api
+    opt:
+      - paths=source_relative

@@ -11,7 +11,7 @@ type GreeterServiceGinServer interface {
 	SayHello(context.Context, *SayHelloRequest) (*SayHelloResponse, error)
 }
 
-func RegisterGreeterServiceServer(s *transport.Server, srv GreeterServiceGinServer) {
+func RegisterGreeterServiceGinServer(s *transport.Server, srv GreeterServiceGinServer) {
 	r := s.Router()
 	r.GET("/v1/hello/:name", _GreeterService_SayHello_Gin_Handler(srv))
 }

@@ -1,5 +1,5 @@
 # docker build --platform linux/amd64 -t buf.build/uneva/protoc-gen-go-http:v1.0.0 .
-# docker build --platform linux/arm64/v8 -t buf.build/uneva/protoc-gen-go-http:v1.0.1 .
+# docker build --platform linux/arm64/v8 -t buf.build/uneva/protoc-gen-go-http:v1.0.0 .
 
 # Use the official Golang image
 FROM golang:1.21-bullseye AS builder
@@ -25,6 +25,8 @@ RUN go build -o /protoc-gen-go-http .
 
 # Create a minimal image
 FROM scratch
+
+COPY --from=builder --link /etc/passwd /etc/passwd
 
 # Copy only the binary from the builder stage
 COPY --from=builder /protoc-gen-go-http /protoc-gen-go-http

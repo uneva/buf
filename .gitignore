@@ -26,7 +26,7 @@ go.sum
 wire_gen.go
 
 # protobuf
-# *.pb.go
+*.pb.go
 
 # Buf Build
 buf.lock
